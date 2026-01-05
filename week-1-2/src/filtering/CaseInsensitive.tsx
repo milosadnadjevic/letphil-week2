@@ -10,6 +10,9 @@ export const CaseInsensitive = () => {
       dataPreview={names}
     >
       <ul>
+        {names.filter((name) => name.includes("a")).map(nameA => 
+          <li>{nameA}</li>
+        )}
       </ul>
     </ProblemCard>
   );

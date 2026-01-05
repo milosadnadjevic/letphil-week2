@@ -1,11 +1,5 @@
 import ProblemCard from "../components/ProblemCard";
 
-/**
- * Conditionally Render the list of users that are online
- * {conditional ? render this if condtion is met : render if it's not met}
- */
-
-// loose comparison 12 == "12" | strict comparison 12 === 12
 
 export const ConditionalRender = () => {
   const users = [
@@ -23,13 +17,12 @@ export const ConditionalRender = () => {
       question='Render each user with a status: "🟢 Online" or "⚪ Offline".'
       dataPreview={users}
     >
-
-      {/* iteration 1 | user = { id: 1, name: "Sam", isOnline: true } */}
       <ul>
-        {users.map((user) =>
-          user.isOnline === true ? <li>{user.name} 🟢 Online</li> : <li>{user.name} ⚪ Offline</li>
+        {users.map(user => 
+          <li key={user.id}>{user.isOnline ? `${user.name} 🟢 Online` : `${user.name} ⚪ Offline`}</li>
         )}
       </ul>
+     
     </ProblemCard>
   );
 };

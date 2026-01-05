@@ -14,6 +14,11 @@ export const AdminsOnly = () => {
       question="Render only the admins."
       dataPreview={users}
     >
+     <ul>
+      {users.filter((user) => user.isAdmin).map(adminUser =>
+        <li key={adminUser.id}>{adminUser.name}</li>
+      )}
+     </ul>
     </ProblemCard>
   );
 }

@@ -11,9 +11,9 @@ export function FruitList() {
       dataPreview={fruits}
     >
       <ul>
-        {fruits.map((fruit, index) => (
+        {fruits.map((fruit, index) => 
           <li key={index}>{fruit}</li>
-        ))}
+        )}
       </ul>
     </ProblemCard>
   );

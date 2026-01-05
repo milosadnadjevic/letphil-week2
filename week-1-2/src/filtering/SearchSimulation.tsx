@@ -1,4 +1,4 @@
-import React from "react";
+
 import ProblemCard from "../components/ProblemCard";
 
 export const SearchSimulation = ({ searchTerm }: { searchTerm: string }) => {
@@ -19,11 +19,9 @@ export const SearchSimulation = ({ searchTerm }: { searchTerm: string }) => {
       dataPreview={{ items, searchTerm }}
     >
       <ul>
-        {items
-          .filter((item) => item.includes(searchTerm))
-          .map((item) => (
-            <li key={item}>{item}</li>
-          ))}
+        {items.filter(item => item.includes(searchTerm)).map(term =>
+          <li key={term}>{term}</li>
+        )}
       </ul>
     </ProblemCard>
   );

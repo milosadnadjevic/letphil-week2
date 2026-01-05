@@ -11,13 +11,11 @@ export const LongWordsOnly = () => {
     question="Render only words longer than 4 characters."
     dataPreview={words}
   >
-    <ul>
-      {words
-      .filter((word) => word.length > 4)
-      .map((word) => (
-        <li>{word}</li>
-      ))}
-    </ul>
+   <ul>
+    {words.filter(word => (word.length > 4)).map(longWords =>
+      <li>{longWords}</li>
+    )}
+   </ul>
   </ProblemCard>
   )
   

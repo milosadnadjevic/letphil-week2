@@ -1,3 +1,4 @@
+import ProblemCard from "../components/ProblemCard";
 export const MultipleConditions = () => {
   const users = [
     { id: 1, name: "Chris", active: true, age: 17 },
@@ -13,6 +14,13 @@ export const MultipleConditions = () => {
       method="filter"
       question="Render users who are active AND age > 18."
       dataPreview={users}
-    ></ProblemCard>
+    >
+      <ul>
+        {users.filter(user => (user.active === true && user.age > 18)).map(activeUsers =>
+          <li key={activeUsers.id}>{activeUsers.name}</li>
+        )}
+      </ul>
+
+    </ProblemCard>
   );
 };

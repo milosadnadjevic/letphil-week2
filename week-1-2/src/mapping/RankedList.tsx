@@ -9,7 +9,11 @@ export const RankedList = () => {
       question="Render a ranked list: 1. item, 2. item, etc."
       dataPreview={items}
     >
-      <ol></ol>
+      <ol>
+        {items.map((item, index) => 
+        <li key={index}>{item}</li>
+        )}
+      </ol>
     </ProblemCard>
   );
 };

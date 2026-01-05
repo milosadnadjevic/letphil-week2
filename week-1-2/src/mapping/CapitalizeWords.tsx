@@ -9,7 +9,10 @@ export const CapitalizeWords = () => {
       question="Render each word with the first letter capitalized."
       dataPreview={animals}
     >
-      <ul></ul>
+      <ul>
+        {animals.map(animal =>
+          <li>{animal.charAt(0).toUpperCase() + animal.slice(1)}</li> )}
+      </ul>
     </ProblemCard>
   );
 };

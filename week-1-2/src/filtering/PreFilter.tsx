@@ -1,4 +1,4 @@
-import React from "react";
+import ProblemCard from "../components/ProblemCard";
 
 export const PreFilter = () => {
   const products = [
@@ -6,6 +6,11 @@ export const PreFilter = () => {
     { id: 2, name: "Pen", inStock: false },
     { id: 3, name: "Backpack", inStock: true },
   ];
+  const ProductItem = (product) => {
+    return <p>{product.name}</p>
+  }
+const inStockProducts = products.filter(product => product.inStock === true)
+
 
   return (
     <ProblemCard
@@ -14,6 +19,7 @@ export const PreFilter = () => {
       question="Filter to in-stock products first, then map into a reusable component."
       dataPreview={products}
     >
+     
     </ProblemCard>
   );
 };

@@ -15,13 +15,7 @@ export const CartTotal = () => {
       question="Use reduce() to calculate total cost: sum(price * quantity)."
       dataPreview={cart}
     >
-      <div>
-        {/* acc = 0; cartItem everything in cart */}
-        {cart.reduce(
-          (acc, cartItem) => (acc += cartItem.price * cartItem.quantity),
-          0
-        )}
-      </div>
+   
     </ProblemCard>
   );
 };
